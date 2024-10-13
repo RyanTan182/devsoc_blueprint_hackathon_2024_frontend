@@ -1,0 +1,19 @@
+.CategoryCard-card {
+    background-color: rgb(234, 231, 231);
+    box-shadow: 0 1px 2px 0 grey;
+    min-width: 100px;
+    width: max-content;
+    height: 50px;
+    margin: 50px 10px;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    padding: 10px 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  .CategoryCard-card:hover {
+    box-shadow: 0 3px 8px 0 grey;  
+  } 
+  .CategoryCard-content {
+    text-align: center;
+  }

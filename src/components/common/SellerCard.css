@@ -1,0 +1,52 @@
+.SellerCard-card {
+    background-color: rgb(234, 231, 231);
+    box-shadow: 0 1px 4px 0 grey;
+    min-width: 250px;
+    width: 250px;
+    max-height: 350px;
+    margin: 50px 20px;
+    border-radius: 20px 20px 0px 0px;
+    padding-top: 35px;
+    /* padding-left: ; */
+  }
+  .SellerCard-card:hover {
+    box-shadow: 0 3px 8px 0 grey;  
+  } 
+  .SellerCard-content {
+    padding: 20px 16px;
+
+  }
+  .SellerCard-description{
+    padding-top: 10px;
+    height: 140px;
+    overflow: hidden;
+    text-align: justify;
+    font-size: 15px;
+  }
+  .SellerCard-card h3, h6, p{
+    margin: 0;
+  }
+  .SellerCard-card h3, h6{
+    text-align: center;
+  }
+  .SellerCard-card p{
+    font-size: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .SellerCard-card hr{
+    margin-bottom: 10px;
+  }
+  .SellerCard-card-img{
+    border-radius: 100%;
+    border: 3px solid black;
+    /*For now*/
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+  }

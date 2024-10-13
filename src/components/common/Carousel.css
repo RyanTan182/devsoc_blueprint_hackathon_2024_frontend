@@ -1,0 +1,12 @@
+.Carousel-div{
+    white-space: pre-line;
+    margin: 0px 5%;
+    overflow-x: scroll;
+    justify-content: space-evenly;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+  }
+  .Carousel-div::-webkit-scrollbar {
+    display: none;
+  }

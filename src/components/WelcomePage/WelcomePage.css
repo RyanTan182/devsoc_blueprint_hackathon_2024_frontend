@@ -1,0 +1,98 @@
+body{
+  margin:0;
+  background-color: #e8d496;
+}
+.WelcomePage-section-a{
+  width: 100%;
+  height: 550px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+  background: linear-gradient(to right, #F7CC4D, #f1cc5c);
+}
+.WelcomePage-text{
+  /* margin: auto; */
+  width: 100%;
+  margin-top: 200px;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  font-size: 25px;
+}
+.WelcomePage-wave{
+  transform: rotate(0deg);
+  /* transform: scaleY(-100%); */
+  position: absolute;
+  display: block;
+  height: auto;
+  width: 100%;
+  /* transform: scaleX(-100%); */
+  transition: 0.3s;
+  fill: #f7cc4d;
+} 
+.WelcomePage-wave-disp-1{
+  position: absolute;
+  transform: rotate(0deg);
+  transform: translateY(10%);
+  height: auto;
+  width: 100%;
+  transition: 0.3s;
+  fill: #f7cc4d;
+} 
+.WelcomePage-wave-disp-2{
+  position: absolute;
+  transform: rotate(0deg);
+  transform: translateY(20%);
+  height: auto;
+  width: 100%;
+  transition: 0.3s;
+  fill: #f7cc4d;
+} 
+.WelcomePage-scroller{
+  overflow-y: scroll;
+  height: 60px;
+  border-radius: 5px;
+  /* overflow: hidden; */
+  min-width: fit-content;
+  margin-bottom: 10px;
+}
+.WelcomePage-scroller h1{
+  margin: 0;
+}
+.WelcomePage-button{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+  width: 100%;
+}
+.WelcomePage-button button{
+  align-self: center;
+  z-index: 2;
+  margin: 20px 0;
+  width: 120px;
+  height: 50px;
+  background-color: #F7CC4D;
+  border-radius: 8px;
+  font-size: 15px;
+}
+.WelcomePage-button button:hover{
+  border-color: white; 
+}
+.WelcomePage-section-break{
+  height: 25vw;
+  width: 100%;
+}
+.WelcomePage-scroller::-webkit-scrollbar {
+  display: none;
+}
+.WelcomePage-images{
+  position: absolute;
+  top: 10vw;
+  left: 0vw;
+  z-index: 1;
+}
+.WelcomePage-images img{
+  width: 500px;
+}
