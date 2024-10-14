@@ -1,0 +1,19 @@
+.SignUp-card {
+    background-color: rgb(234, 231, 231);
+    margin: auto;
+    /* justify-self: center; */
+    display: flex;
+    flex-flow: column ;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 4px 0 grey;
+    width: 400px;
+    height: 550px;
+    border-radius: 20px;
+    /* padding-top: 35px; */
+    /* padding-left: ; */
+  }
+.SignUp-card button{
+    width: 60%;
+    
+}
