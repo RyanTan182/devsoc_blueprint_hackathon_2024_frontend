@@ -12,6 +12,7 @@ import MyProfilePage from './pages/MyProfilePage';
 import LoginPage from './pages/LoginPage';
 import GetProductDetailPage from './pages/GetProductDetailPage';
 import store from './store';
+import SignUpPage from './pages/UserRegistrationPage';
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
           <Header />
             <Routes>
               <Route path="/" element={<WelcomePage />} />
+              <Route path="/account/register" element={<SignUpPage />} />
               <Route path="/search" element={<ProductPage />} />
-              <Route path="/createproducts" element={<CreateProductPage />} />
+              <Route path="/product/create" element={<CreateProductPage />} />
               <Route path="/product/:productid" element={<GetProductDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/profile/:accountid" element={<MyProfilePage />} />

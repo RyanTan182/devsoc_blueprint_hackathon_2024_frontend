@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { CREATE_PRODUCT_API } from '../requests/requestConfig';
-import FormikSubmitButton from '../components/ui/formik-submit-button';
+import FormikSubmitButton from '../components/forms/formik-submit-button';
 
 export default function CreateProductPage() {
     const [ isSubmitting, setIsSubmitting ] = useState(false);

@@ -28,10 +28,24 @@ export default function Header(props) {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
+    const handleClose = () =>  {
+        setAnchorEl(null);
+    }
     
-    const handleClose = () => {
+    const handleLogin = () => {
+        navigate("/login");
         setAnchorEl(null);
     };
+
+    const handleSignUp = () => {
+        navigate("/account/register");
+        setAnchorEl(null);
+    };
+
+    const handleClickLogo = () => {
+        navigate("/");
+    }
 
     const handleSignOut = async() => {
         try {
@@ -64,7 +78,7 @@ export default function Header(props) {
             className="h-16 px-2 flex bg-slate-950" 
             disableGutters
         >
-            <Typography variant="h6" component="div" className="text-white px-5" sx={{ flexGrow: 1 }}>
+            <Typography onClick={handleClickLogo} variant="h6" component="div" className="text-white px-5" sx={{ flexGrow: 1 }}>
                 HireMe
             </Typography>
 
@@ -72,7 +86,7 @@ export default function Header(props) {
                 <Button 
                     color="outlined" 
                     disableRipple
-                    onClick={() => navigate('/products')}
+                    onClick={() => navigate('/search')}
                     sx= {{
                         color: "white"
                     }}
@@ -83,7 +97,7 @@ export default function Header(props) {
                 <Button 
                     color="outlined" 
                     disableRipple
-                    onClick={() => navigate('/createproducts')}
+                    onClick={() => navigate('/product/create')}
                     sx= {{
                         color: "white"
                     }}
@@ -127,7 +141,7 @@ export default function Header(props) {
                 
                     {isAuthenticated ?
                         <MenuItem 
-                            onClick={handleClose}   
+                            onClick={handleSignOut}   
                             sx={{ 
                                 justifyContent: "center",
                                 "&:hover": {
@@ -144,7 +158,7 @@ export default function Header(props) {
                         </MenuItem> :
 
                         <MenuItem 
-                            onClick={handleClose}   
+                            onClick={handleLogin}   
                             sx={{ 
                                 justifyContent: "center",
                                 "&:hover": {
@@ -164,7 +178,7 @@ export default function Header(props) {
                     {!isAuthenticated &&
                         <Fragment>
                             <MenuItem 
-                                onClick={handleClose}   
+                                onClick={handleSignUp}   
                                 sx={{ 
                                     justifyContent: "center",
                                     "&:hover": {
@@ -182,32 +196,5 @@ export default function Header(props) {
                 </Menu>
             </div>
         </Toolbar>
-        // <Toolbar 
-        //     className="h-16 px-2 flex bg-slate-950" 
-        //     disableGutters
-        // >
-        //     <Box className="flex items-stretch">
-        //         {/* <IconButton></IconButton> */}
-
-                
-
-
-
-        //         {/* <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap' }}>
-        //             <Button color ="primary" variant="contained">
-        //                 Sign up
-        //             </Button>
-        //             <Box className = "flex flex-end">
-
-        //             </Box>
-        //             <Button color ="primary" variant="contained" >
-        //                 Login
-        //             </Button>
-        //         </Stack> */}
-
-        //         <IconButton />
-        //     </Box>
-        // </Toolbar>
-        
     )
 }
