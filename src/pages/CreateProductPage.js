@@ -48,7 +48,12 @@ export default function CreateProductPage() {
 
 
     return (
-        <Box className="bg-white p-10 m-20 opacity-80" sx={{ borderRadius: '16px' }}>
+        <Box className="bg-white p-10 m-20 opacity-80" 
+            sx={{ 
+                borderRadius: '16px',
+                border: 0.5
+            }}
+        >
             <Box className = "text-center">
                 <Typography variant="h5">
                     Join us today
@@ -166,5 +171,6 @@ export default function CreateProductPage() {
                 )}
             </Formik>
         </Box>
+
     )
 }

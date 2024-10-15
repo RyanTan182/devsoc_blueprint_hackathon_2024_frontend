@@ -6,6 +6,7 @@ import DancingImages from '../DancingImages/DancingImages';
 import './WelcomePage.css';
 import React, { useEffect, useRef, useState } from 'react';
 import TitlebarImageList from '../common/TitlebarImageList';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function WelcomePage() {
@@ -26,6 +27,7 @@ export default function WelcomePage() {
     // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' }]
+    const navigate = useNavigate();
     const scrollRef = useRef(0);
     const currentTop = useRef(0);
     const [intervalId, setIntervalId] = useState(null);
@@ -34,6 +36,15 @@ export default function WelcomePage() {
     const delay = (delayInms) => {
         return new Promise(resolve => setTimeout(resolve, delayInms));
       };
+
+    const handleClickSearch = () => {
+        navigate("/search")
+    };
+
+    const handleClickSignUp = () => {
+        navigate("/account/register")
+    };
+
     const scrollToPosition = (jump, duration) => {
         if (scrollRef.current) {
             const startTime = Date.now();
@@ -143,11 +154,11 @@ export default function WelcomePage() {
                         </Typography>
 
                         <Stack direction="row" spacing={2}>
-                            <Button variant='contained'>
+                            <Button variant='contained' onClick={handleClickSignUp}>
                                 Get Started
                             </Button>
 
-                            <Button variant='contained'>
+                            <Button variant='contained' onClick={handleClickSearch}>
                                 Explore
                             </Button>
                         </Stack>

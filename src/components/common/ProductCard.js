@@ -6,8 +6,15 @@ import Slider from 'react-slick';
 import ReactStars from "react-stars";
 import { motion } from 'framer-motion';
 import SellerCard from './SellerCard';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductCard({ data }) {
+  const navigate = useNavigate();
+
+  const handleClickBuy = () => {
+    navigate("/order")
+  }
+
   let sellers = [{ 'img':'Einstein.png' ,'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     { 'img':'Bruce.png' ,'name': 'Bruce Lee', 'role': 'Martial Artist', 'description': 'Hi! I will teach you one Inch punch!' },
     { 'img':'Kaori.png' ,'name': 'Kaori', 'role': 'Violinist', 'description': 'Hi! I am available for providing Violin lessons till February' },]
@@ -68,9 +75,9 @@ export default function ProductCard({ data }) {
           width:'500px',
           height:'50px'
         }}
-        onClick={() => alert('Added to cart!')}
+        onClick={handleClickBuy}
       >
-        Add to Cart
+        Purchase
       </motion.button>
     );
   };

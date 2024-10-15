@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import Typography from '@mui/material/Typography';
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { LOGOUT_API } from "../../../requests/requestConfig";
@@ -195,22 +195,22 @@ export default function Header(props) {
                     }
 
                     {!isAuthenticated &&
-                        <Fragment>
-                            <MenuItem 
-                                onClick={handleSignUp}   
-                                sx={{ 
-                                    justifyContent: "center",
-                                    "&:hover": {
-                                        backgroundColor: "white"
-                                    } 
-                                }}
-                                disableRipple
-                            >
-                                <Button variant="contained" >
-                                    Sign Up
-                                </Button>
-                            </MenuItem>               
-                        </Fragment>
+            
+                        <MenuItem 
+                            onClick={handleSignUp}   
+                            sx={{ 
+                                justifyContent: "center",
+                                "&:hover": {
+                                    backgroundColor: "white"
+                                } 
+                            }}
+                            disableRipple
+                        >
+                            <Button variant="contained" >
+                                Sign Up
+                            </Button>
+                        </MenuItem>               
+
                     }
                 </Menu>
             </div>
