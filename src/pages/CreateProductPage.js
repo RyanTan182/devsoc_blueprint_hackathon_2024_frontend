@@ -1,19 +1,54 @@
 import { Box, Grid2, Typography } from '@mui/material';
+import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
+import { CREATE_PRODUCT_API } from '../requests/requestConfig';
+import FormikSubmitButton from '../components/ui/formik-submit-button';
 
 export default function CreateProductPage() {
+    const [ isSubmitting, setIsSubmitting ] = useState(false);
+
     const validationSchema = Yup.object({
         title: Yup.string().required('Title is required'),
         price: Yup.number().positive('Price must be a positive number').required('Price is required'),
-        video: Yup.mixed().required('Video is required'),
-        photo: Yup.mixed().required('Photo is required'),
         productType: Yup.string().required('Product type is required'),
         description: Yup.string().required('Description is required')
     });
 
+    const handleSubmitCreateProductForm = async(values, actions) => {
+        actions.setSubmitting(false);
+
+        setIsSubmitting(true);
+
+        try {
+            const res = await axios.post(CREATE_PRODUCT_API, values);
+            // const product = res.data.data;
+
+            if (res.status === 200) {
+                // dispatch(snackbarActions.setSnackbarState({
+                //     open: true, 
+                //     type: "success", 
+                //     message: "Successfully create product."
+                // }));
+
+                setIsSubmitting(false);
+            };
+        } catch(err) {
+            // dispatch(snackbarActions.setSnackbarState({
+            //     open: true , 
+            //     type: "error", 
+            //     message: "Oops... Something went wrong."
+            // }));
+
+            setIsSubmitting(false);
+        }
+    };
+
+
     return (
-        <Box className="bg-white p-10 mx-20">
+        <Box className="bg-white p-10 m-20 opacity-80" sx={{ borderRadius: '16px' }}>
             <Box className = "text-center">
                 <Typography variant="h5">
                     Join us today
@@ -23,12 +58,9 @@ export default function CreateProductPage() {
             <Formik
                 initialValues={{ title: '', price: '', video: null, photo: null, productType: '', description: '', tag: '' }}
                 validationSchema={validationSchema}
-                onSubmit={(values) => {
-                // Handle form submission
-                    console.log('Form data:', values);
-                }}
+                onSubmit={handleSubmitCreateProductForm}
             >
-                {({ setFieldValue }) => (
+                {({ errors, touched, setFieldValue }) => (
                 <Form className="flex flex-col space-y-4 p-4">
                     <Grid2 container spacing={2} xs={12}>
                         <Grid2 item>
@@ -106,7 +138,7 @@ export default function CreateProductPage() {
                         name="description"
                         cstyle={{
                             width: '100%',
-                            height: '200px', // Adjust height as needed
+                            height: '50', // Adjust height as needed
                         }}
                     />
 
@@ -124,9 +156,12 @@ export default function CreateProductPage() {
                         <ErrorMessage name="tag" component="div" className="text-red-600" />
                     </Grid2>
 
-                    <button type="submit" className="bg-blue-500 border-none w-20 text-white p-2">
+                    <FormikSubmitButton 
+                        variant="contained"
+                        disabled={(touched.amount && errors.amount) ? true : false}
+                    >
                         Submit
-                    </button>
+                    </FormikSubmitButton>
                 </Form>
                 )}
             </Formik>
