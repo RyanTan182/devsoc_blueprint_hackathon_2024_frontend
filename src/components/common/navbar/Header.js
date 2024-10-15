@@ -2,7 +2,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import Typography from '@mui/material/Typography';
 import { Fragment, useState } from "react";
@@ -11,6 +11,7 @@ import axios from "axios";
 import { LOGOUT_API } from "../../../requests/requestConfig";
 import { authActions } from "../../../store/authSlice";
 import { userActions } from "../../../store/userSlice";
+import { Image } from "@mui/icons-material";
 
 
 export default function Header(props) {
@@ -76,11 +77,29 @@ export default function Header(props) {
     return (
         <Toolbar
             className="h-16 px-2 flex bg-slate-950" 
+            sx={{ 
+                borderBottom: 1,
+                borderColor: "white"
+             }}
             disableGutters
         >
             <Typography onClick={handleClickLogo} variant="h6" component="div" className="text-white px-5" sx={{ flexGrow: 1 }}>
                 HireMe
             </Typography>
+            
+            {/* <Box onClick={handleClickLogo} className="text-white px-5" sx={{ flexGrow: 1 }}>
+                <Button className="hover:bg-white ml-1 flex-none" disableRipple>
+                    <div className="ml-16px">
+                        <Image 
+                            src="/public/logo.png"
+                            alt="HireMe"
+                            width={130}
+                            height={70}
+                        />
+                    </div>
+                </Button>
+            </Box> */}
+
 
             <Stack direction="row" spacing={3} className="pr-10">
                 <Button 

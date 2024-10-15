@@ -1,3 +1,4 @@
+import { Box, Button, ButtonGroup, Card, CardHeader, Grid2, Stack, Typography } from '@mui/material';
 import Carousel from '../common/Carousel';
 import CategoryCard from '../common/CategoryCard';
 import SellerCard from '../common/SellerCard';
@@ -13,6 +14,14 @@ export default function WelcomePage() {
     let sellers = [{ 'img':'Einstein.png' ,'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     { 'img':'Bruce.png' ,'name': 'Bruce Lee', 'role': 'Martial Artist', 'description': 'Hi! I will teach you one Inch punch!' },
     { 'img':'Kaori.png' ,'name': 'Kaori', 'role': 'Violinist', 'description': 'Hi! I am available for providing Violin lessons till February' },]
+    // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
+    // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
+    // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' }]
+    // const animatedWords = ['Web Developer ?', 'Digital Marketing ?', 'Graphic Designer ?', '']
+    // const categories = ['Science & Technology', 'Art', 'Music', 'Voice Acting', "Creative Writing", 'Tutoring', 'Screen  Writer', 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance']
+    // const sellers = [{ 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
+    // { 'name': 'Bruce Lee', 'role': 'Martial Artist', 'description': 'Hi! I will teach you one Inch punch!' },
+    // { 'name': 'Kaori', 'role': 'Violinist', 'description': 'Hi! I am available for providing Violin lessons till February' },
     // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     // { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' }]
@@ -43,75 +52,224 @@ export default function WelcomePage() {
         }
     }
 
-    const keepScrolling = (jump, duration) => {
-        currentTop.current = scrollRef.current.scrollTop
-        const h1Element = document.querySelector('.WelcomePage-text h1');
-        const h1Height = h1Element.offsetHeight;
-        setIntervalId(setInterval(() => {
-            scrollToPosition(h1Height, duration);
-        }, 3000));
-    };
-    useEffect(() => {
-        keepScrolling(60, 200)
-    }, [])
+    // const keepScrolling = (jump, duration) => {
+    //     currentTop.current = scrollRef.current.scrollTop
+    //     const h1Element = document.querySelector('.WelcomePage-text h1');
+    //     const h1Height = h1Element.offsetHeight;
+    //     setIntervalId(setInterval(() => {
+    //         scrollToPosition(h1Height, duration);
+    //     }, 3000));
+    // };
+    // useEffect(() => {
+    //     keepScrolling(60, 200)
+    // }, [])
     return (
-        <div>
-            <div className='WelcomePage-section-a'>
-                {/* <div style={{width: '100%', height:'100%', position: 'relative'}}> */}
-                <DancingImages/>
-                {/* </div> */}
-                <div className='WelcomePage-text'>
-                    {/* <h1>
-                        Looking for a
-                    </h1> */}
-                    <div ref={scrollRef} className='WelcomePage-scroller'>
-                        {animatedWords.map((word) =>
-                        (<h1>
-                            {word}
-                        </h1>)
-                        )}
-                    </div>
-                </div>
-                <div className='WelcomePage-button'>
-                    <button>
-                        Get Started
-                    </button>
-                    {/* </div> */}
-                    {/* <div className='WelcomePage-button'> */}
-                    <button>
-                        Explore
-                    </button>
-                </div>
+        // <div>
+        //     <div className='WelcomePage-section-a'>
+        //         {/* <div style={{width: '100%', height:'100%', position: 'relative'}}> */}
+        //         <DancingImages/>
+        //         {/* </div> */}
+        //         <div className='WelcomePage-text'>
+        //             {/* <h1>
+        //                 Looking for a
+        //             </h1> */}
+        //             <div ref={scrollRef} className='WelcomePage-scroller'>
+        //                 {animatedWords.map((word) =>
+        //                 (<h1>
+        //                     {word}
+        //                 </h1>)
+        //                 )}
+        //             </div>
+        //         </div>
+        //         <div className='WelcomePage-button'>
+        //             <button>
+        //                 Get Started
+        //             </button>
+        //             {/* </div> */}
+        //             {/* <div className='WelcomePage-button'> */}
+        //             <button>
+        //                 Explore
+        //             </button>
+        //         </div>
+        //     </div>
+        //     <div style={{width:'100%', height:'100%', zIndex:100, color:'white', backgroundColor:'#b691ff36'}}>
+        //         <div className='WelcomePage-section-break'>
+        //             <svg className='WelcomePage-wave' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        //                 <path fill-opacity="1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        //             </svg>
+        //             <svg className='WelcomePage-wave-disp-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        //                 <path fill-opacity="0.3" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        //             </svg>
+        //             <svg className='WelcomePage-wave-disp-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        //                 <path fill-opacity="0.1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        //             </svg>
+        //         </div>
+        //         <div style={{marginLeft:'80px', fontSize:'35px', marginRight:'80px'}}>
+        //             Filter your results from a wide array of categories
+        //             <hr></hr>
+        //         </div>
+        //         <Carousel>
+        //             {categories.map(t => <CategoryCard title={t} />)}
+        //         </Carousel>
+        //         <div style={{marginLeft:'80px', fontSize:'35px', marginRight:'80px', marginTop:'100px'}}>
+        //             <div style={{display:'flex', width:'100%', justifyContent:'right'}}>
+        //             Get services from your favourite sellers
+        //             </div>
+        //             <hr></hr>
+        //         </div>
+        //         <Carousel>
+        //             {sellers.map(d => <SellerCard data={d} />)}
+        //         </Carousel>
+        //     </div>
+        // </div>
+        <Box>
+            <Box className = "h-100 bg-black flex py-20 px-10">
+                <Box sx={{
+                    width: 500,
+                    height: 400
+                }}>
+                    <Box className='pl-10 py-10'>
+                        <Typography variant='h4' className='text-white' sx={{fontWeight: 'bold'}}>
+                            Looking for A
+                        </Typography>
+
+                        <Typography variant='h3' className='text-white' >
+                            Developer...?
+                        </Typography>
+
+                        <Typography variant='body1' className='text-gray-500 pr-10 py-5' >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac quam id justo vehicula tincidunt ac id eros. Fusce viverra, dui quis finibus tempus, quam lorem mattis nunc, eget laoreet nulla neque feugiat dolor. Proin porttitor sapien non eleifend pellentesque.
+                        </Typography>
+
+                        <Stack direction="row" spacing={2}>
+                            <Button variant='contained'>
+                                Get Started
+                            </Button>
+
+                            <Button variant='contained'>
+                                Explore
+                            </Button>
+                        </Stack>
+            
+                        <div ref={scrollRef} className='WelcomePage-scroller'>
+
+                        </div>
+                    </Box>
+                </Box>
+
+                <Box>
+                    <img
+                        src='/home.png'
+                        className='mr-5'
+                        style={{ maxWidth: '400px', maxHeight: '500px' }}
+                    />
+                </Box>
+
+            </Box>
+            <div className='WelcomePage-section-break'>
+                <svg className='WelcomePage-wave' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill-opacity="1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+                </svg>
+                <svg className='WelcomePage-wave-disp-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill-opacity="0.3" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+                </svg>
+                <svg className='WelcomePage-wave-disp-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill-opacity="0.1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+                </svg>
             </div>
-            <div style={{width:'100%', height:'100%', zIndex:100, color:'white', backgroundColor:'#b691ff36'}}>
-                <div className='WelcomePage-section-break'>
-                    <svg className='WelcomePage-wave' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill-opacity="1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
-                    </svg>
-                    <svg className='WelcomePage-wave-disp-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill-opacity="0.3" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
-                    </svg>
-                    <svg className='WelcomePage-wave-disp-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill-opacity="0.1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
-                    </svg>
-                </div>
-                <div style={{marginLeft:'80px', fontSize:'35px', marginRight:'80px'}}>
-                    Filter your results from a wide array of categories
-                    <hr></hr>
-                </div>
-                <Carousel>
-                    {categories.map(t => <CategoryCard title={t} />)}
-                </Carousel>
-                <div style={{marginLeft:'80px', fontSize:'35px', marginRight:'80px', marginTop:'100px'}}>
-                    <div style={{display:'flex', width:'100%', justifyContent:'right'}}>
-                    Get services from your favourite sellers
-                    </div>
-                    <hr></hr>
-                </div>
-                <Carousel>
-                    {sellers.map(d => <SellerCard data={d} />)}
-                </Carousel>
-            </div>
-        </div>
+
+            <Grid2 container>
+                <Grid2 item xs={12} className="justify-center">
+                    <Typography variant='h2' >
+                        Category
+                    </Typography>
+                </Grid2>
+
+                <Grid2 item xs={12} className="justify-center">
+                    <Card className="border-2 border-solid border-gray-200 w-[350px] h-[300px] flex flex-col">
+                        <Box 
+                            p={2} 
+                            className="flex items-center"
+                        >
+                            <CardHeader 
+                                title="Basketball" 
+                                className="p-0"
+                            />
+
+                        </Box>
+                    </Card>
+                </Grid2>
+
+                
+
+                {/* <Box className='flex flex-1'>
+ 
+                </Box>
+                <Card className="border-2 border-solid border-gray-200 w-[350px] h-[300px] flex flex-col">
+                    <Box 
+                        p={2} 
+                        className="flex items-center"
+                    >
+                        <CardHeader 
+                            title="Basketball" 
+                            className="p-0"
+                        />
+
+                    </Box>
+                </Card> */}
+            </Grid2>
+        </Box>
+
+        
+        
+        // <div>
+        //     <div className='WelcomePage-section-a'>
+        //         {/* <div className='WelcomePage-images'>
+        //         <img src='Piano.png'></img>
+        //         <img src='Editing.png'></img>
+        //         <img src='Coding.png'></img>
+        //         <img src='Mic.png'></img>
+        //     </div> */}
+        //         <div className='WelcomePage-text'>
+        //             <h1>
+        //                 Looking for a
+        //             </h1>
+        //             <div ref={scrollRef} className='WelcomePage-scroller'>
+        //                 {animatedWords.map((word) =>
+        //                 (<h1>
+        //                     {word}
+        //                 </h1>)
+        //                 )}
+        //             </div>
+        //         </div>
+        //         <div className='WelcomePage-button'>
+        //             <button>
+        //                 Login
+        //             </button>
+        //             {/* </div> */}
+        //             {/* <div className='WelcomePage-button'> */}
+        //             <button>
+        //                 Explore
+        //             </button>
+        //         </div>
+        //     </div>
+        //     <div className='WelcomePage-section-break'>
+        //         <svg className='WelcomePage-wave' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        //             <path fill-opacity="1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        //         </svg>
+        //         <svg className='WelcomePage-wave-disp-1' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        //             <path fill-opacity="0.3" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        //         </svg>
+        //         <svg className='WelcomePage-wave-disp-2' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        //             <path fill-opacity="0.1" d="M0,192L34.3,197.3C68.6,203,137,213,206,186.7C274.3,160,343,96,411,90.7C480,85,549,139,617,165.3C685.7,192,754,192,823,186.7C891.4,181,960,171,1029,170.7C1097.1,171,1166,181,1234,202.7C1302.9,224,1371,256,1406,272L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        //         </svg>
+        //     </div>
+        //     <Carousel>
+        //         {categories.map(t => <CategoryCard title={t} />)}
+        //     </Carousel>
+        //     <Carousel>
+        //         {sellers.map(d => <SellerCard data={d} />)}
+        //     </Carousel>
+        // </div>
     );
 }
