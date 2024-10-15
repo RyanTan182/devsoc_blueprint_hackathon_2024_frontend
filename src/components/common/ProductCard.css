@@ -14,6 +14,7 @@
   }
   
   .ProductCard-content {
+    text-align: center;
     padding: 20px 16px;
   }
   
@@ -27,6 +28,10 @@
   
   .ProductCard-card h3, h6 {
     text-align: center;
+  }
+
+  .ProductCard-review {
+    display: block ruby;
   }
   
 
@@ -55,5 +60,25 @@
     object-fit: cover;
     display: block;
     margin: 0 auto;
+  }
+
+  .ProductCard-recommendations {
+    text-align: center;
+    text-decoration: underline;
+    padding: 10px;
+  font-weight: bold;
+  font-size: large;
+  }
+
+  .ProductCard-rec-cards {
+    white-space: pre-line;
+    margin: 0px 5%;
+    margin-bottom: 15px;
+    overflow-x: scroll;
+    justify-content: space-around;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    border-radius: 20px;
   }
   
