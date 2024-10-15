@@ -1,16 +1,17 @@
-import { Box, Button, ButtonGroup, Card, CardHeader, Grid2, Stack, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Card, CardHeader, Grid2, Slide, Stack, Typography } from '@mui/material';
 import Carousel from '../common/Carousel';
 import CategoryCard from '../common/CategoryCard';
 import SellerCard from '../common/SellerCard';
 import DancingImages from '../DancingImages/DancingImages';
 import './WelcomePage.css';
 import React, { useEffect, useRef, useState } from 'react';
+import TitlebarImageList from '../common/TitlebarImageList';
 
 
 export default function WelcomePage() {
 
     let animatedWords = ['Programmer ?', 'Piano  Tutor ?', 'Voice Actor ?', 'Screen Writer ?', 'Find the right talent', 'Or be the right talent', 'Signup now!']
-    let categories = ['Science & Technology', 'Art', 'Music', 'Voice Acting', "Creative Writing", 'Tutoring', 'Screen  Writer', 'Fitness & Sports', 'Yoga', 'Dance',]// 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance']
+    // let categories = ['Science & Technology', 'Art', 'Music', 'Voice Acting', "Creative Writing", 'Tutoring', 'Screen  Writer', 'Fitness & Sports', 'Yoga', 'Dance',]// 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance']
     let sellers = [{ 'img':'Einstein.png' ,'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     { 'img':'Bruce.png' ,'name': 'Bruce Lee', 'role': 'Martial Artist', 'description': 'Hi! I will teach you one Inch punch!' },
     { 'img':'Kaori.png' ,'name': 'Kaori', 'role': 'Violinist', 'description': 'Hi! I am available for providing Violin lessons till February' },]
@@ -123,7 +124,7 @@ export default function WelcomePage() {
         //     </div>
         // </div>
         <Box>
-            <Box className = "h-100 bg-black flex py-20 px-10">
+            <Box className = "h-100 bg-black flex py-20 px-10 justify-center">
                 <Box sx={{
                     width: 500,
                     height: 400
@@ -178,46 +179,32 @@ export default function WelcomePage() {
                 </svg>
             </div>
 
-            <Grid2 container>
+            <TitlebarImageList />
+
+            {/* <Grid2 container>
                 <Grid2 item xs={12} className="justify-center">
                     <Typography variant='h2' >
                         Category
                     </Typography>
                 </Grid2>
 
-                <Grid2 item xs={12} className="justify-center">
-                    <Card className="border-2 border-solid border-gray-200 w-[350px] h-[300px] flex flex-col">
-                        <Box 
-                            p={2} 
-                            className="flex items-center"
-                        >
-                            <CardHeader 
-                                title="Basketball" 
-                                className="p-0"
-                            />
+                {categories.map(data => {
+                    <Grid2 item xs={12}>
+                        <Card className="border-2 border-solid border-gray-200 w-[300px] h-[300px] flex flex-col">
+                            <Box 
+                                p={2} 
+                                className="flex items-center"
+                            >
+                                <CardHeader 
+                                    title="Basketball" 
+                                    className="p-0"
+                                />
 
-                        </Box>
-                    </Card>
-                </Grid2>
-
-                
-
-                {/* <Box className='flex flex-1'>
- 
-                </Box>
-                <Card className="border-2 border-solid border-gray-200 w-[350px] h-[300px] flex flex-col">
-                    <Box 
-                        p={2} 
-                        className="flex items-center"
-                    >
-                        <CardHeader 
-                            title="Basketball" 
-                            className="p-0"
-                        />
-
-                    </Box>
-                </Card> */}
-            </Grid2>
+                            </Box>
+                        </Card>
+                    </Grid2>
+                })}
+            </Grid2> */}
         </Box>
 
         
