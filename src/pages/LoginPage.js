@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -24,7 +24,7 @@ export default function LoginPage() {
 
     const [ isSubmitting, setIsSubmitting ] = useState(false);
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleSubmitLoginForm = async (values, actions) => {
         actions.setSubmitting(false);
@@ -53,7 +53,7 @@ export default function LoginPage() {
             //     message: "Successfully logged in."
             // }));
 
-            history.go(-1);
+            navigate(-1);
 
         } catch(err) {
             // dispatch(snackbarActions.setSnackbarState({
