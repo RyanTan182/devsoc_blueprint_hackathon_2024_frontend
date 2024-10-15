@@ -4,7 +4,7 @@
     min-width: 250px;
     width: 250px;
     max-height: 350px;
-    margin: 50px 20px;
+    margin: 50px 10px;
     border-radius: 20px 20px 0px 0px;
     padding-top: 35px;
     /* padding-left: ; */
@@ -14,7 +14,6 @@
   } 
   .SellerCard-content {
     padding: 20px 16px;
-
   }
   .SellerCard-description{
     padding-top: 10px;

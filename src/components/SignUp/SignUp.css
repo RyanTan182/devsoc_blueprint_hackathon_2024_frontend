@@ -1,0 +1,79 @@
+.SignUp-card {
+    background-color: rgb(234, 231, 231);
+    margin: auto;
+    /* justify-self: center; */
+    /* display: flex;
+    flex-flow: column ;
+    justify-content: center; */
+    /* align-items: center; */
+    box-shadow: 0 1px 4px 0 grey;
+    width: 400px;
+    height: 550px;
+    border-radius: 20px;
+    /* padding-top: 35px; */
+    /* padding-left: ; */
+  }
+  .SignUp-card button:hover{
+    box-shadow: 0 1px 4px 0 grey;
+    border-color: white; 
+  }
+  .SignUp-card button{
+    box-shadow: 0 1px 4px 0 grey;
+    border-color: white; 
+  }
+.SignUp-toggle-1{
+  border: 1px solid white;
+  background-color: rgb(234, 231, 231);
+  border-right: 1px solid black;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 0px 0px 0px;
+}
+.SignUp-toggle-2{
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50%;
+  border-radius: 0px 20px 0px 0px;
+}
+.SignUp-form{
+  display: flex;
+  width: 100%;
+  height: 90%;
+  /* height: fit-content; */
+  flex-flow: row;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+
+}
+.SignUp-form input{
+  width:100%;
+  height:40px;
+}
+.SignUp-form form{
+  width: 70%;
+  padding:10px 0;
+  margin:15px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 300px;
+
+  /* gap:10px; */
+  /* border-top:solid 1px lightgray; */
+  border-bottom:solid 1px lightgray;
+}
+.SignUp-form button{
+  width:100%;
+  height:40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,79 @@
+/* .DancingImages-images{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+} */
+.DancingImages-images img{
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    transform-origin: -20% -20%;
+    
+}
+.DancingImages-images img:nth-child(1){
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 12rem;
+    animation: dance 3s ease-in-out infinite; 
+    /* z-index: -10; */
+    top: 25%;
+    left: 67%;
+}
+.DancingImages-images img:nth-child(2){
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 12rem;
+    animation: dance 3s ease-in-out infinite; 
+    animation-delay: 1s;
+    /* z-index: -10; */
+    top: 25%;
+    left: 30%;
+}
+.DancingImages-images img:nth-child(3){
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 9rem;
+    animation: dance 3s ease-in-out infinite; 
+    animation-delay: 2s;    /* z-index: -10; */
+    top: 60%;
+    left: 25%;
+}
+.DancingImages-images img:nth-child(4){
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 7rem;
+    animation: dance 3s ease-in-out infinite; 
+    animation-delay: 3s;
+    /* z-index: -10; */
+    top: 60%;
+    left: 75%;
+}
+.DancingImages-images img:nth-child(5){
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 15rem;
+    /* animation: dance 6s ease-in-out infinite; 
+    animation-delay: 4s; */
+    /* z-index: -10; */
+    top: 70%;
+    left: 50%;
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+    .DancingImages-images img {
+        opacity: 0;
+    }
+}
+@keyframes dance {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+        /* opacity: 0.1; */
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(15%);
+        /* opacity: 0.8; */
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+        /* opacity: 0.1; */
+    }
+}
