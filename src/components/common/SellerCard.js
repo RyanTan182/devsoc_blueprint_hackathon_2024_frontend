@@ -4,7 +4,7 @@ export default function SellerCard({data}) {
   return (
     <div className="SellerCard-card">
       <div className='SellerCard-card-img'>
-      <img src="default_img.png" width="100%" height="100%"/>
+      <img src={data['img']} width="100%" height="100%"/>
       </div>
       <div className='SellerCard-content'>
         <h3>{data['name']}</h3>
