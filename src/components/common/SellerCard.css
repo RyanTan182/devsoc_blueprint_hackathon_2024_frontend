@@ -1,6 +1,6 @@
 .SellerCard-card {
-    background-color: rgb(234, 231, 231);
-    box-shadow: 0 1px 4px 0 grey;
+    background-color: #b691ff36;
+    box-shadow: 0 1px 4px 0 #A47ceb;
     min-width: 250px;
     width: 250px;
     max-height: 350px;
@@ -10,7 +10,7 @@
     /* padding-left: ; */
   }
   .SellerCard-card:hover {
-    box-shadow: 0 3px 8px 0 grey;  
+    box-shadow: 0 3px 8px 0 #A47ceb;  
   } 
   .SellerCard-content {
     padding: 20px 16px;

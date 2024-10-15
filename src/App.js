@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage';
 import GetProductDetailPage from './pages/GetProductDetailPage';
 import store from './store';
 import SignUpPage from './pages/UserRegistrationPage';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
               <Route path="/" element={<WelcomePage />} />
               <Route path="/account/register" element={<SignUpPage />} />
               <Route path="/search" element={<ProductPage />} />
+              {/* Home is supposed to be the search page, product page is for the dedicated product */}
+              <Route path="/home" element={<Home/>} />
               <Route path="/product/create" element={<CreateProductPage />} />
               <Route path="/product/:productid" element={<GetProductDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
