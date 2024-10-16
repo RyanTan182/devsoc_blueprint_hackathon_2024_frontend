@@ -93,6 +93,21 @@ function SellerCard({data}) {
       </div>
     );
   }
+  function ServiceCard({data}) {
+    return (
+      <div className="Home-service-card">
+        <div className='Home-service-card-img'>
+        <img src={data['img']} width="100%" height="100%"/>
+        </div>
+        <div className='Home-service-card-content'>
+          <h3>{data['name']}</h3>
+          <h6>{data['role']}</h6>
+          <hr></hr>
+          <div className='Home--service-card-description'>{data['description']}</div>
+        </div>
+      </div>
+    );
+  }
 
   function CategoryCard({title}) {
     return (
