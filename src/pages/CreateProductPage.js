@@ -49,7 +49,6 @@ export default function CreateProductPage() {
 
     return (
         <Box className='bg-gradient-to-r from-violet-950 to-black p-20'>
-
             <Box className="bg-white p-10 opacity-80" 
                 sx={{ 
                     borderRadius: '16px',
