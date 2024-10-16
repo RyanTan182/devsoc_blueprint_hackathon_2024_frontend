@@ -1,6 +1,6 @@
 body{
   margin:0;
-  background-color: white;
+  background-color: #000617;
 }
 .WelcomePage-section-a{
   position: relative;
@@ -58,14 +58,14 @@ body{
 .WelcomePage-scroller{
   overflow-y: hidden;
   height: 60px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   /* overflow: hidden; */
   min-width: fit-content;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
-.WelcomePage-scroller h1{
+/* .WelcomePage-scroller h1{
   margin: 0;
-}
+} */
 .WelcomePage-button{
   align-items: center;
   justify-content: center;
@@ -104,6 +104,7 @@ body{
   width: 100%;
   z-index: 20;
   /* background-color: #000617; */
+  background-color: white;
 }
 .WelcomePage-scroller::-webkit-scrollbar {
   display: none;
@@ -117,4 +118,11 @@ body{
 .WelcomePage-images img{
   
   width: 500px;
+}
+.slick-prev,
+.slick-next {
+  display: none !important; /* Hide buttons */
+}
+.slider-container{
+  margin:0
 }

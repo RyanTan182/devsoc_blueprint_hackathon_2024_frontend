@@ -7,11 +7,14 @@ import './WelcomePage.css';
 import React, { useEffect, useRef, useState } from 'react';
 import TitlebarImageList from '../common/TitlebarImageList';
 import { useNavigate } from 'react-router-dom';
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 export default function WelcomePage() {
 
-    let animatedWords = ['Programmer ?', 'Piano  Tutor ?', 'Voice Actor ?', 'Screen Writer ?', 'Find the right talent', 'Or be the right talent', 'Signup now!']
+    let animatedWords = ['Programmer...?', 'Piano Tutor...?', 'Voice Actor...?', 'Screen Writer...?']
     // let categories = ['Science & Technology', 'Art', 'Music', 'Voice Acting', "Creative Writing", 'Tutoring', 'Screen  Writer', 'Fitness & Sports', 'Yoga', 'Dance',]// 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance', 'Fitness & Sports', 'Yoga', 'Dance']
     let sellers = [{ 'img':'Einstein.png' ,'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     { 'img':'Bruce.png' ,'name': 'Bruce Lee', 'role': 'Martial Artist', 'description': 'Hi! I will teach you one Inch punch!' },
@@ -32,6 +35,20 @@ export default function WelcomePage() {
     const currentTop = useRef(0);
     const [intervalId, setIntervalId] = useState(null);
     const [currentElement, setCurrentElement] = useState(animatedWords[0]);
+    const settings = {
+        dots: false, // Show dots below the slider
+        infinite: true, // Infinite looping
+        speed: 500, // Transition speed
+        slidesToShow: 1, // Number of slides to show
+        slidesToScroll: 1, // Number of slides to scroll
+        autoplay: true, // Enable autoplay
+        autoplaySpeed: 3000, // Time between auto-scroll (in milliseconds)
+        // pauseOnHover: true, // Pause on hover
+        vertical: true, // Enable vertical scrolling
+        verticalSwiping: true,
+        // verticalSwiping: true, // Enable vertical swiping
+
+      };
     // const [scrollArray, setScrollArray] = useState([animatedWords[0], animatedWords[1]])
     const delay = (delayInms) => {
         return new Promise(resolve => setTimeout(resolve, delayInms));
@@ -135,7 +152,7 @@ export default function WelcomePage() {
         //     </div>
         // </div>
         <Box>
-            <Box className = "h-100 bg-black flex py-20 px-10 justify-center">
+            <Box className = "h-100 flex py-20 px-10 justify-center" bgcolor={'#000617'}>
                 <Box sx={{
                     width: 500,
                     height: 400
@@ -144,9 +161,10 @@ export default function WelcomePage() {
                         <Typography variant='h4' className='text-white' sx={{fontWeight: 'bold'}}>
                             Looking for A
                         </Typography>
-
-                        <Typography variant='h3' className='text-white' >
-                            Developer...?
+                        <Typography variant='h3' color='#0054FF'>
+                        <Slider {...settings}>
+                            {animatedWords.map((word)=><div>{word}</div>)}
+                        </Slider>
                         </Typography>
 
                         <Typography variant='body1' className='text-gray-500 pr-10 py-5' >
@@ -154,11 +172,11 @@ export default function WelcomePage() {
                         </Typography>
 
                         <Stack direction="row" spacing={2}>
-                            <Button variant='contained' onClick={handleClickSignUp}>
+                            <Button variant='contained' onClick={handleClickSignUp} style={{backgroundColor:'#0054FF'}}>
                                 Get Started
                             </Button>
 
-                            <Button variant='contained' onClick={handleClickSearch}>
+                            <Button variant='contained' onClick={handleClickSearch} style={{backgroundColor:'transparent', border:'1px solid white'}}>
                                 Explore
                             </Button>
                         </Stack>

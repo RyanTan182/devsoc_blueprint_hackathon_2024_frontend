@@ -11,7 +11,7 @@ export default function TitlebarImageList(props) {
     const {categories} = props;
 
     return (
-        <Box className='text-center'>
+        <Box className='text-center bg-white'>
             <Typography variant='h4'>
                 Categories
             </Typography>
