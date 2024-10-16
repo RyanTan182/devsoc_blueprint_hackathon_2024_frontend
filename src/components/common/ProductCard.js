@@ -75,9 +75,9 @@ export default function ProductCard({ data }) {
           width:'500px',
           height:'50px'
         }}
-        onClick={handleClickBuy}
+        onClick={() => navigate(`/product/${data.product_id}`)}
       >
-        Purchase
+        Details
       </motion.button>
     );
   };

@@ -48,129 +48,131 @@ export default function CreateProductPage() {
 
 
     return (
-        <Box className="bg-white p-10 m-20 opacity-80" 
-            sx={{ 
-                borderRadius: '16px',
-                border: 0.5
-            }}
-        >
-            <Box className = "text-center">
-                <Typography variant="h5">
-                    Join us today
-                </Typography>
-            </Box>
+        <Box className='bg-gradient-to-r from-violet-950 to-black p-20'>
 
-            <Formik
-                initialValues={{ title: '', price: '', video: null, photo: null, productType: '', description: '', tag: '' }}
-                validationSchema={validationSchema}
-                onSubmit={handleSubmitCreateProductForm}
+            <Box className="bg-white p-10 opacity-80" 
+                sx={{ 
+                    borderRadius: '16px',
+                    border: 0.5
+                }}
             >
-                {({ errors, touched, setFieldValue }) => (
-                <Form className="flex flex-col space-y-4 p-4">
-                    <Grid2 container spacing={2} xs={12}>
-                        <Grid2 item>
-                            <Typography className="pb-2">
-                                Title
-                            </Typography>
-
-                            <Field
-                                type="text"
-                                name="title"
-                                className="border border-gray-300 rounded p-2"
-                            />
-
-                            <ErrorMessage name="title" component="div" className="text-red-600" />
-                        </Grid2>
-                    </Grid2>
-
-                    <Grid2 container spacing={2} xs={12}>
-                        <Grid2 item>
-                            <Typography className="pb-2">
-                                Price
-                            </Typography>
-
-                            <Field
-                                type="text"
-                                name="price"
-                                className="border border-gray-300 rounded p-2"
-                            />
-
-                            <ErrorMessage name="price" component="div" className="text-red-600" />
-                        </Grid2>
-                    </Grid2>
-
-                    <Grid2 container spacing={2} xs={12}>
-                        <Grid2 item>
-                            <label htmlFor="video">Upload Video</label>
-
-                            <input
-                                type="file"
-                                name="video"
-                                accept="video/*"
-                                onChange={(event) => {
-                                setFieldValue('video', event.currentTarget.files[0]);
-                                }}
-                                className="border border-gray-300 rounded p-2"
-                            />
-                            <ErrorMessage name="video" component="div" className="text-red-600" />
-                        </Grid2>
-                    </Grid2>
-
-                    <Grid2 container spacing={2} xs={12}>
-                        <Grid2 item >
-                            <label htmlFor="photo">Upload Photo</label>
-
-                            <input
-                                type="file"
-                                name="photo"
-                                accept="image/*"
-                                onChange={(event) => {
-                                    setFieldValue('photo', event.currentTarget.files[0]);
-                                }}
-                                className="border border-gray-300 rounded p-2 flex-1"
-                            />
-
-                            <ErrorMessage name="price" component="div" className="text-red-600" />
-                        </Grid2>
-                    </Grid2>
-
-                    <Typography>
-                        Description
+                <Box className = "text-center">
+                    <Typography variant="h5">
+                        Join us today
                     </Typography>
+                </Box>
 
-                    <Field
-                        as="textarea"
-                        name="description"
-                        cstyle={{
-                            width: '100%',
-                            height: '50', // Adjust height as needed
-                        }}
-                    />
+                <Formik
+                    initialValues={{ title: '', price: '', video: null, photo: null, productType: '', description: '', tag: '' }}
+                    validationSchema={validationSchema}
+                    onSubmit={handleSubmitCreateProductForm}
+                >
+                    {({ errors, touched, setFieldValue }) => (
+                    <Form className="flex flex-col space-y-4 p-4">
+                        <Grid2 container spacing={2} xs={12}>
+                            <Grid2 item>
+                                <Typography className="pb-2">
+                                    Title
+                                </Typography>
 
-                    <Grid2>
-                        <Typography className="pb-2">
-                            Tags
+                                <Field
+                                    type="text"
+                                    name="title"
+                                    className="border border-gray-300 rounded p-2"
+                                />
+
+                                <ErrorMessage name="title" component="div" className="text-red-600" />
+                            </Grid2>
+                        </Grid2>
+
+                        <Grid2 container spacing={2} xs={12}>
+                            <Grid2 item>
+                                <Typography className="pb-2">
+                                    Price
+                                </Typography>
+
+                                <Field
+                                    type="text"
+                                    name="price"
+                                    className="border border-gray-300 rounded p-2"
+                                />
+
+                                <ErrorMessage name="price" component="div" className="text-red-600" />
+                            </Grid2>
+                        </Grid2>
+
+                        <Grid2 container spacing={2} xs={12}>
+                            <Grid2 item>
+                                <label htmlFor="video">Upload Video</label>
+
+                                <input
+                                    type="file"
+                                    name="video"
+                                    accept="video/*"
+                                    onChange={(event) => {
+                                    setFieldValue('video', event.currentTarget.files[0]);
+                                    }}
+                                    className="border border-gray-300 rounded p-2"
+                                />
+                                <ErrorMessage name="video" component="div" className="text-red-600" />
+                            </Grid2>
+                        </Grid2>
+
+                        <Grid2 container spacing={2} xs={12}>
+                            <Grid2 item >
+                                <label htmlFor="photo">Upload Photo</label>
+
+                                <input
+                                    type="file"
+                                    name="photo"
+                                    accept="image/*"
+                                    onChange={(event) => {
+                                        setFieldValue('photo', event.currentTarget.files[0]);
+                                    }}
+                                    className="border border-gray-300 rounded p-2 flex-1"
+                                />
+
+                                <ErrorMessage name="price" component="div" className="text-red-600" />
+                            </Grid2>
+                        </Grid2>
+
+                        <Typography>
+                            Description
                         </Typography>
 
                         <Field
-                            type="text"
-                            name="tags"
-                            className="border border-gray-300 rounded p-2"
+                            as="textarea"
+                            name="description"
+                            cstyle={{
+                                width: '100%',
+                                height: '50', // Adjust height as needed
+                            }}
                         />
-                        
-                        <ErrorMessage name="tag" component="div" className="text-red-600" />
-                    </Grid2>
 
-                    <FormikSubmitButton 
-                        variant="contained"
-                        disabled={(touched.amount && errors.amount) ? true : false}
-                    >
-                        Submit
-                    </FormikSubmitButton>
-                </Form>
-                )}
-            </Formik>
+                        <Grid2>
+                            <Typography className="pb-2">
+                                Tags
+                            </Typography>
+
+                            <Field
+                                type="text"
+                                name="tags"
+                                className="border border-gray-300 rounded p-2"
+                            />
+                            
+                            <ErrorMessage name="tag" component="div" className="text-red-600" />
+                        </Grid2>
+
+                        <FormikSubmitButton 
+                            variant="contained"
+                            disabled={(touched.amount && errors.amount) ? true : false}
+                        >
+                            Submit
+                        </FormikSubmitButton>
+                    </Form>
+                    )}
+                </Formik>
+            </Box>
         </Box>
-
     )
 }

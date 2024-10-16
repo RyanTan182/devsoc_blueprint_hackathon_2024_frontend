@@ -6,6 +6,23 @@ import axios from 'axios';
 
 import { authActions } from '../store/authSlice';
 import { userActions } from '../store/userSlice';
+import { Box, Button, Divider, Paper, Typography } from '@mui/material';
+import { Form, Formik } from 'formik';
+import * as Yup from "yup";
+import { EMAIL_SCHEMA, PASSWORD_SCHEMA } from '../components/forms/form-schema';
+import FormikEmail from '../components/forms/formik-email';
+import FormikPassword from '../components/forms/formik-password';
+import FormikSubmitButton from '../components/forms/formik-submit-button';
+import { LOGIN_API } from '../requests/requestConfig';
+
+const LOGIN_FORM_INITIAL_STATE = {
+    username: "",
+    password: ""
+};
+
+const LOGIN_FORM_VALIDATION = Yup.object().shape({
+    password: PASSWORD_SCHEMA
+});
 
 const dummyUser = {
     "account_id": "45bc8e65-d25c-41d0-82ae-f4a2832c9037",
@@ -21,29 +38,27 @@ const dummyUser = {
 
 export default function LoginPage() { 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [ isSubmitting, setIsSubmitting ] = useState(false);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleSubmitLoginForm = async (values, actions) => {
         actions.setSubmitting(false);
         setIsSubmitting(true);
 
         try {
-            const res = await axios.post(process.env.LOGIN_API, values);
+            const res = await axios.post(LOGIN_API, values);
             
-            const { user, defaultAddress, defaultCreditCard, totalAmount } = res.data.data;
+            const { user } = res.data.data;
 
             dispatch(authActions.login());
 
             dispatch(userActions.setUser({
-                name: user.name,
+                username: user.username,
                 email: user.email,
-                phoneNumber: user.phoneNumber,
-                amazonPoints: user.amazonPoints,
-                defaultAddress,
-                defaultCreditCard
+                payId: user.payId
             }));
 
 
@@ -67,6 +82,68 @@ export default function LoginPage() {
     };
 
     return(
-        <div>Login Page</div>
+        <Box
+            sx={{
+                width: "100vw",
+                height: "100vh"
+            }}
+            className="flex justify-center bg-black"
+        >
+            <Box className="flex flex-col pt-8 mb-2">
+                <Box className='my-4 flex justify-center'>
+                    <img src='/logo.png' width={210} height={50} />
+                </Box>
+
+                <Formik
+                    initialValues={{...LOGIN_FORM_INITIAL_STATE}}
+                    validationSchema={LOGIN_FORM_VALIDATION}
+                    onSubmit={handleSubmitLoginForm}
+                >
+                    {({errors, touched}) => (
+                        <Form className='bg-black'>
+                            <Paper
+                                className="border-gray-300 border-solid border-2 rounded-lg p-8 w-[400px]"
+                            >
+                                <Typography variant="h5">Login</Typography>
+
+                                <FormikEmail 
+                                    name="username"
+                                    label="username" 
+                                />
+
+                                <FormikPassword
+                                    name="password"
+                                    label="Password"
+                                />
+
+                                <FormikSubmitButton 
+                                    fullWidth
+                                    variant="contained"
+                                    className="mt-3 mb-5"
+                                    disabled={
+                                        (touched.username && errors.username) || 
+                                        (touched.password && errors.password) ||
+                                        isSubmitting ? 
+                                            true : 
+                                            false
+                                    }
+                                >
+                                    {isSubmitting ? "Submitting..." : "Login"}
+                                </FormikSubmitButton>
+                            </Paper>
+                        </Form>
+                    )}
+                </Formik>
+                
+                <Button 
+                    variant="outlined" className="normal-case"
+                    fullWidth
+                    sx={{marginTop: 3}}
+                    onClick={() => navigate('/account/register')}
+                >
+                    Sign up
+                </Button>
+            </Box>
+        </Box>
     );
 }

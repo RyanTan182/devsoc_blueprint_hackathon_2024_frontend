@@ -2,6 +2,7 @@ import axios from "axios";
 import useSWR from "swr";
 import PageSpinner from "../components/ui/pageSpinner";
 import { GET_PRODUCT_DETAIL_API } from "../requests/requestConfig";
+import { Box } from "@mui/material";
 
 const dummyProduct = {
     "account_id": "45bc8e65-d25c-41d0-82ae-f4a2832c9037",
@@ -29,7 +30,10 @@ export default function GetProductDetailPage() {
     // console.log(productData);
 
     return (
+        <Box className='min-h-screen bg-gradient-to-r from-violet-950 to-black'>
+            
+        </Box>
         
-        <div>GetProductDetailPage</div>
+        // <div>GetProductDetailPage</div>
     )
 }

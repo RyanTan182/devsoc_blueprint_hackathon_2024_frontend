@@ -152,7 +152,8 @@ export default function WelcomePage() {
         //     </div>
         // </div>
         <Box>
-            <Box className = "h-100 flex py-20 px-10 justify-center" bgcolor={'#000617'}>
+            {/* <Box className = "h-100 flex py-20 px-10 justify-center" bgcolor={'#000617'}> */}
+            <Box className = "h-100 bg-gradient-to-r from-violet-950 to-black flex py-20 px-10 justify-center">
                 <Box sx={{
                     width: 500,
                     height: 400
