@@ -83,26 +83,28 @@ export default function ProductCard({ data }) {
     );
   };
   
-
   return (
-    <Box className="ProductCard-card">
-      <ImageSlider />
-      <div className='ProductCard-content'>
-        <h1>{data['product_name']}</h1>
-        <h6>{data['seller_name']}</h6>
-        <div className='ProductCard-review'>
-        <ReviewStar />
+    <Box className='p-20 opacity-90'>
+
+      <div className="ProductCard-card">
+        <ImageSlider />
+        <div className='ProductCard-content'>
+          <h1>{data['product_name']}</h1>
+          <h6>{data['seller_name']}</h6>
+          <div className='ProductCard-review'>
+          <ReviewStar />
+          </div>
+          <hr />
+          <div className='ProductCard-description'>{data['description']}</div>
+          <AddToCartButton/>
         </div>
-        <hr />
-        <div className='ProductCard-description'>{data['description']}</div>
-        <AddToCartButton/>
-      </div>
-      <ColoredLine color="black" />
-      <div className='ProductCard-recommendations'>
-        You may also like this...
-      </div>
-      <div className='ProductCard-rec-cards'>
-        {sellers.map(d => <SellerCard data={d} />)}
+        <ColoredLine color="black" />
+        <div className='ProductCard-recommendations'>
+          You may also like this...
+        </div>
+        <div className='ProductCard-rec-cards'>
+          {sellers.map(d => <SellerCard data={d} />)}
+        </div>
       </div>
     </Box>
   );

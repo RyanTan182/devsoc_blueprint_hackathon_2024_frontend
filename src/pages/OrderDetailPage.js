@@ -53,7 +53,6 @@ export default function GetOrderDetailPage() {
 
     const order = dummyOrder;
 
-
     return (
         <Box p={3} className="min-h-screen bg-gradient-to-r from-violet-950 to-black">
             <Card className="my-5 opacity-90">

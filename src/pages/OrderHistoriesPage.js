@@ -90,8 +90,6 @@ export default function GetOrderHistoriesPage() {
     // const ordersData = data.data;
     // console.log(ordersData);
 
-
-    
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     const orders = dummyOrders.orders;
     console.log(orders)
