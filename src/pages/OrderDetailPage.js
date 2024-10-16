@@ -55,9 +55,8 @@ export default function GetOrderDetailPage() {
 
 
     return (
-        <Box p={3} className="min-h-screen bg-gray-200">
-            <Card className="my-5">
-
+        <Box p={3} className="min-h-screen bg-gradient-to-r from-violet-950 to-black">
+            <Card className="my-5 opacity-90">
                 <CardContent>
                     <Box className='flex'>
                         <Button disableRipple variant="text" onClick={() => navigate(`/product/${order.product.product_id}`)}>
@@ -123,8 +122,7 @@ export default function GetOrderDetailPage() {
                             <Box className='flex'>
                                 <MailIcon />
                                 <Typography className="pl-2">
-                                    {/* {order.seller.email}  */}
-                                    thisisaverylongemail@gooogle.com
+                                    {order.seller.email} 
                                 </Typography>      
                             </Box>
                         </Box>

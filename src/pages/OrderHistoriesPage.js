@@ -97,14 +97,14 @@ export default function GetOrderHistoriesPage() {
     console.log(orders)
 
     return (
-        <Box p={3} className="min-h-screen bg-gray-200">
+        <Box p={3} className="min-h-screen bg-gradient-to-r from-violet-950 to-black">
             {/* {isAuthenticated ? 
                 (<OrderPanelList orders = {dummyOrders}/>) :
                 navigate("/login")
             } */}
 
             {orders.map(order => 
-                <Card className="my-5">
+                <Card className="my-5 opacity-90">
                     <CardContent>
                         <Typography variant="h5">
                             {order.product.title}

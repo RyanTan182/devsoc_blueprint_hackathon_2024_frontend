@@ -12,9 +12,9 @@ import { Box } from '@mui/material';
 export default function ProductCard({ data }) {
   const navigate = useNavigate();
 
-  const handleClickBuy = () => {
-    navigate("/order")
-  }
+  // const handleClickBuy = () => {
+  //   navigate("/order")
+  // }
 
   let sellers = [{ 'img':'Einstein.png' ,'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
     { 'img':'Bruce.png' ,'name': 'Bruce Lee', 'role': 'Martial Artist', 'description': 'Hi! I will teach you one Inch punch!' },
