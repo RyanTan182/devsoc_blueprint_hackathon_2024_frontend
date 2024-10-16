@@ -7,6 +7,7 @@ import ReactStars from "react-stars";
 import { motion } from 'framer-motion';
 import SellerCard from './SellerCard';
 import { useNavigate } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 export default function ProductCard({ data }) {
   const navigate = useNavigate();

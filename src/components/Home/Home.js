@@ -2,6 +2,7 @@ import Carousel from "../common/Carousel";
 // import CategoryCard from "../common/CategoryCard";
 // import SellerCard from "../common/SellerCard";
 import './Home.css'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Home() {
@@ -79,8 +80,9 @@ export default function Home() {
 }
 
 function SellerCard({data}) {
+  const navigate = useNavigate();
     return (
-      <div className="Home-seller-card">
+      <div onClick={() => navigate(`/search`)} className="Home-seller-card">
         <div className='Home-seller-card-img'>
         <img src={data['img']} width="100%" height="100%"/>
         </div>
@@ -91,6 +93,7 @@ function SellerCard({data}) {
           <div className='Home--seller-card-description'>{data['description']}</div>
         </div>
       </div>
+
     );
   }
   function ServiceCard({data}) {

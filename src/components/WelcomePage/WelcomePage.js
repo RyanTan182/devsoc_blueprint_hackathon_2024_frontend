@@ -55,7 +55,7 @@ export default function WelcomePage() {
       };
 
     const handleClickSearch = () => {
-        navigate("/search")
+        navigate("/home")
     };
 
     const handleClickSignUp = () => {
