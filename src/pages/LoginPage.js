@@ -87,7 +87,7 @@ export default function LoginPage() {
                 width: "100vw",
                 height: "100vh"
             }}
-            className="flex justify-center bg-black"
+            className="flex justify-center bg-gradient-to-r from-violet-950 to-black"
         >
             <Box className="flex flex-col pt-8 mb-2">
                 <Box className='my-4 flex justify-center'>
@@ -101,8 +101,8 @@ export default function LoginPage() {
                 >
                     {({errors, touched}) => (
                         <Form className='bg-black'>
-                            <Paper
-                                className="border-gray-300 border-solid border-2 rounded-lg p-8 w-[400px]"
+                            <Box
+                                className="border-gray-300 border-solid border-2 rounded-lg p-8 w-[400px] bg-white opacity-90"
                             >
                                 <Typography variant="h5">Login</Typography>
 
@@ -130,7 +130,7 @@ export default function LoginPage() {
                                 >
                                     {isSubmitting ? "Submitting..." : "Login"}
                                 </FormikSubmitButton>
-                            </Paper>
+                            </Box>
                         </Form>
                     )}
                 </Formik>

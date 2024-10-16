@@ -84,7 +84,7 @@ export default function ProductCard({ data }) {
   
 
   return (
-    <div className="ProductCard-card">
+    <Box className="ProductCard-card">
       <ImageSlider />
       <div className='ProductCard-content'>
         <h1>{data['product_name']}</h1>
@@ -103,6 +103,6 @@ export default function ProductCard({ data }) {
       <div className='ProductCard-rec-cards'>
         {sellers.map(d => <SellerCard data={d} />)}
       </div>
-    </div>
+    </Box>
   );
 }

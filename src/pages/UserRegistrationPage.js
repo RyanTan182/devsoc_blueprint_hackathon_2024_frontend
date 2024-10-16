@@ -85,7 +85,7 @@ function SignUpPage() {
                 width: "100vw",
                 height: "100vh"
             }}
-            className="flex justify-center bg-white"
+            className="flex justify-center bg-gradient-to-r from-violet-950 to-black"
         >
             <Box className="flex flex-col pt-8 mb-2">
                 <Formik
@@ -95,8 +95,8 @@ function SignUpPage() {
                 >
                     {({errors, touched }) => (
                         <Form>
-                            <Paper
-                                className="border-gray-300 border-solid border-2 rounded-lg p-8 w-[400px]"
+                            <Box
+                                className="border-gray-300 border-solid border-2 rounded-lg p-8 w-[400px] bg-white opacity-90"
                             >
                                 <Typography variant="h5">Create account</Typography>
 
@@ -142,7 +142,7 @@ function SignUpPage() {
                                 >
                                     {isSubmitting ? "Submitting..." : "Sign up"}
                                 </FormikSubmitButton>
-                            </Paper>
+                            </Box>
                         </Form>
                     )}
             </Formik>
