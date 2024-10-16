@@ -97,7 +97,7 @@ export default function GetOrderHistoriesPage() {
     console.log(orders)
 
     return (
-        <Box p={3} className="h-screen bg-gray-200">
+        <Box p={3} className="min-h-screen bg-gray-200">
             {/* {isAuthenticated ? 
                 (<OrderPanelList orders = {dummyOrders}/>) :
                 navigate("/login")
@@ -139,8 +139,7 @@ export default function GetOrderHistoriesPage() {
                         </Button>
                     </CardContent>
                 </Card>
-            )}
-                
+            )}   
         </Box>
     )
 
