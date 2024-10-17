@@ -15,6 +15,7 @@ import store from './store';
 import SignUpPage from './pages/UserRegistrationPage';
 import Home from './components/Home/Home';
 import AboutUsPage from './pages/AboutUsPage';
+import Footer from './components/common/navbar/Footer';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
               <Route path="/about-us" element={<AboutUsPage />} />
 
               {/* Home is supposed to be the search page, product page is for the dedicated product */}
-              <Route path="/home" element={<Home/>} />
+              <Route path="/explore" element={<Home/>} />
               <Route path="/product/create" element={<CreateProductPage />} />
               <Route path="/product/:productid" element={<GetProductDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
@@ -38,6 +39,9 @@ function App() {
               <Route path="/order" element={<GetOrderHistoriesPage />} />
               <Route path="/order/:orderid" element={<GetOrderDetailPage />} />
             </Routes>
+
+          <Footer />
+
         </div>
         </Router>
     </Provider>

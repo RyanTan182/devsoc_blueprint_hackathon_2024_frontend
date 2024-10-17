@@ -105,7 +105,7 @@ export default function Header(props) {
                 <Button 
                     color="outlined" 
                     disableRipple
-                    onClick={() => navigate('/home')}
+                    onClick={() => navigate('/explore')}
                     sx= {{
                         color: "white"
                     }}

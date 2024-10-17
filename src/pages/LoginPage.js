@@ -61,21 +61,9 @@ export default function LoginPage() {
                 payId: user.payId
             }));
 
-
-            // dispatch(snackbarActions.setSnackbarState({
-            //     open: true , 
-            //     type: "success", 
-            //     message: "Successfully logged in."
-            // }));
-
             navigate(-1);
 
         } catch(err) {
-            // dispatch(snackbarActions.setSnackbarState({
-            //     open: true , 
-            //     type: "error", 
-            //     message: err?.response?.data?.message ? err.response.data.message : "Oops... Something went wrong"
-            // }));
 
             setIsSubmitting(false);
         }

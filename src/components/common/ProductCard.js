@@ -84,7 +84,7 @@ export default function ProductCard({ data }) {
   };
   
   return (
-    <Box className='p-20 opacity-90'>
+    <Box className='py-10 px-20 opacity-80'>
 
       <div className="ProductCard-card">
         <ImageSlider />

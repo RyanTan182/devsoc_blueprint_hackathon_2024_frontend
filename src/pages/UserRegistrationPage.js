@@ -88,6 +88,10 @@ function SignUpPage() {
             className="flex justify-center bg-gradient-to-r from-violet-950 to-black"
         >
             <Box className="flex flex-col pt-8 mb-2">
+                <Box className='my-4 flex justify-center'>
+                    <img src='/logo.png' width={210} height={50} />
+                </Box>
+
                 <Formik
                     initialValues={{...SIGN_UP_FORM_INITIAL_STATE}}
                     validationSchema={SIGN_UP_FORM_VALIDATION}

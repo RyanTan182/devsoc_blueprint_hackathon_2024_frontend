@@ -7,35 +7,35 @@ import MailIcon from '@mui/icons-material/Mail';
 import { useNavigate } from "react-router-dom";
 
 const dummyOrder = {
-    "booking_time": "Sat, 12 Oct 2024 15:00:00 GMT",
+    "booking_time": "Sat, 12 Oct 2024",
     "buyer_account_id": "45bc8e65-d25c-41d0-82ae-f4a2832c9037",
-    "meetup_location": "test",
-    "order_id": "d8e50581-8366-49d3-aeb0-4fc711e939c7",
+    "meetup_location": "TBD",
+    "order_id": "f498b5e3-2c18-43c0-ba5d-4b8ba2032da9",
     "product": {
         "account_id": "45bc8e65-d25c-41d0-82ae-f4a2832c9037",
         "description": "description",
         "photo_urls": null,
-        "price": 0.0,
+        "price": 45.0,
         "product_id": "4514a381-ee9f-4b99-b40d-b86f70220d8b",
         "product_type": "service",
-        "title": "title1",
+        "title": "Piano lesson",
         "video_urls": [
             "test1",
             "test2"
         ]
     },
-    "purchased_date": "Sun, 13 Oct 2024 07:50:13 GMT",
+    "purchased_date": "Sun, 13 Oct 2024",
     "seller": {
         "account_id": "45bc8e65-d25c-41d0-82ae-f4a2832c9037",
-        "email": "test1",
-        "first_name": "test1",
-        "last_name": "test1",
-        "pay_id": "test1",
+        "email": "meganfox@gmail.com",
+        "first_name": "Megan",
+        "last_name": "Fox",
+        "pay_id": "123123242",
         "profile_picture_url": "test1",
         "social_media_links": "test1",
         "username": "test1",
         "zid": "test1"
-    }
+    },
 }
 
 export default function GetOrderDetailPage() {
@@ -55,7 +55,7 @@ export default function GetOrderDetailPage() {
 
     return (
         <Box p={3} className="min-h-screen bg-gradient-to-r from-violet-950 to-black">
-            <Card className="my-5 opacity-90">
+            <Card className="my-5 opacity-80">
                 <CardContent>
                     <Box className='flex'>
                         <Button disableRipple variant="text" onClick={() => navigate(`/product/${order.product.product_id}`)}>

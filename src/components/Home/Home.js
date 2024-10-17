@@ -1,4 +1,5 @@
 import Carousel from "../common/Carousel";
+import SearchBar from "../common/search-bar/search-bar";
 // import CategoryCard from "../common/CategoryCard";
 // import SellerCard from "../common/SellerCard";
 import './Home.css'
@@ -57,7 +58,8 @@ export default function Home() {
                     { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' },
                     { 'name': 'Einstein', 'role': 'Physicist', 'description': 'Hi! I will solve all your Physics related doubts!' }]
     return(
-        <div style={{color:'white'}}>
+        <div className="bg-gradient-to-r from-violet-950 to-black" style={{color:'white'}}>
+            <SearchBar />
             <div className='Home-carousel-tag'>
             {categories.map(t => <CategoryCard title={t} />)}
             </div>

@@ -6,12 +6,14 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { Box, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function TitlebarImageList(props) {
     const {categories} = props;
+    const navigate = useNavigate();
 
     return (
-        <Box className='text-center bg-white'>
+        <Box className='text-center bg-white pb-8' onClick={() => navigate('/explore')}>
             <Typography variant='h4'>
                 Categories
             </Typography>
